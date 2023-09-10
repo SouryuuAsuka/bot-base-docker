@@ -16,6 +16,8 @@ services:
     restart: always
     environment:
       - ./mongo_bot_variables.env
+    volumes: ~/db/bot-base/mongo/data:/data/db
+
 
   bot-base-mongo-express:
     image: mongo-express
