@@ -15,14 +15,12 @@ services:
     image: mongo
     container_name: bot-base-mongo
     restart: always
-    env_file:
-      - ./mongo_bot_variables.env
     volumes: 
       - /var/data/bot-base/mongo/data:/data/db
     environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
-      MONGO_INITDB_DATABASE: ${MONGO_ROOT_DATABASE}
+      MONGO_INITDB_ROOT_USERNAME: $MONGO_ROOT_USERNAME
+      MONGO_INITDB_ROOT_PASSWORD: $MONGO_ROOT_PASSWORD
+      MONGO_INITDB_DATABASE: admins
 
   bot-base-mongo-express:
     image: mongo-express
