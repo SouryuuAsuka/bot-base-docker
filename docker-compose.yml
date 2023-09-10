@@ -16,12 +16,11 @@ services:
     container_name: bb-mongo
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: $MONGO_ROOT_USERNAME
-      MONGO_INITDB_ROOT_PASSWORD: $MONGO_ROOT_PASSWORD
-      MONGO_INITDB_DATABASE: admin
+      - ./mongo_bot_variables.env
+    volumes:
     networks:
       - main-net
-
+    
   bb-mongo-express:
     image: mongo-express
     container_name: bb-mongo-express
@@ -30,6 +29,8 @@ services:
       - ./mongo_express_bot_variables.env
     networks:
       - main-net
+    depends_on:
+      - bb-mongo
       
 networks:
   main-net:
