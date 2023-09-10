@@ -12,11 +12,8 @@ services:
       - main-net
 
   bot-base-mongo:
-    image: mongo
-    container_name: bot-base-mongo
+    image: mongo:latest
     restart: always
-    volumes: 
-      - /var/data/bot-base/mongo/data:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: $MONGO_ROOT_USERNAME
       MONGO_INITDB_ROOT_PASSWORD: $MONGO_ROOT_PASSWORD
