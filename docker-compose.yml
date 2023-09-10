@@ -13,6 +13,7 @@ services:
 
   bb-mongo:
     image: mongo:latest
+    container_name: bb-mongo
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: $MONGO_ROOT_USERNAME
