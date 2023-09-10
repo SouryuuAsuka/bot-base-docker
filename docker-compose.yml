@@ -18,6 +18,7 @@ services:
     environment:
       - ./mongo_bot_variables.env
     volumes:
+      - /var/data/bot-base/mongo/data/:/data/db
     networks:
       - main-net
     
