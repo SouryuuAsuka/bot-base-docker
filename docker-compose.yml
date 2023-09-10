@@ -18,7 +18,9 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: $MONGO_ROOT_USERNAME
       MONGO_INITDB_ROOT_PASSWORD: $MONGO_ROOT_PASSWORD
-      MONGO_INITDB_DATABASE: admins
+      MONGO_INITDB_DATABASE: admin
+    networks:
+      - main-net
 
   bb-mongo-express:
     image: mongo-express
