@@ -17,7 +17,7 @@ services:
     env_file:
       - ./mongo_bot_variables.env
     volumes: 
-      - /home/gitactions/db/bot-base/mongo/data:/data/db
+      - /var/data/bot-base/mongo/data:/data/db
 
   bot-base-mongo-express:
     image: mongo-express
