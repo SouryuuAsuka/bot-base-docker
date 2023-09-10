@@ -14,7 +14,7 @@ services:
   bot-base-mongo:
     image: mongo
     restart: always
-    environment:
+    env_file:
       - ./mongo_bot_variables.env
     volumes: 
       - ~/db/bot-base/mongo/data:/data/db
@@ -23,7 +23,7 @@ services:
   bot-base-mongo-express:
     image: mongo-express
     restart: always
-    environment:
+    env_file:
       - ./mongo_express_bot_variables.env
       
 networks:
