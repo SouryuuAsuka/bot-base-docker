@@ -26,6 +26,8 @@ services:
     restart: always
     env_file:
       - ./mongo_express_bot_variables.env
+    networks:
+      - main-net
       
 networks:
   main-net:
