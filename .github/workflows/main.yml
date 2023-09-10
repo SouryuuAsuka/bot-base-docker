@@ -25,7 +25,7 @@ jobs:
         script: |
           echo {$USER}
           ssh -T git@github.com
-          cd ~/bot-base/bot-base-docker
+          cd /home/gitactions/bot-base/bot-base-docker
           git pull git@github.com:SouryuuAsuka/bot-base-docker.git main
           git status
           docker-compose build
