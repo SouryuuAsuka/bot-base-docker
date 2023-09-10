@@ -15,7 +15,7 @@ services:
     image: mongo:latest
     container_name: bb-mongo
     restart: always
-    environment:
+    env_file:
       - ./mongo_bot_variables.env
     volumes:
       - /var/data/bot-base/mongo/data:/data/db
