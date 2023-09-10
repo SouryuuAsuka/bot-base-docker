@@ -10,6 +10,20 @@ services:
       - ./melon_bot_variables.env
     networks:
       - main-net
+
+  bot-base-mongo:
+    image: mongo
+    restart: always
+    environment:
+      - ./mongo_bot_variables.env
+
+  bot-base-mongo-express:
+    image: mongo-express
+    restart: always
+    environment:
+      - ./mongo_express_bot_variables.env
+      
 networks:
   main-net:
     external: true
+
