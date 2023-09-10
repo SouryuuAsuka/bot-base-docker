@@ -11,7 +11,7 @@ services:
     networks:
       - main-net
 
-  bot-base-mongo:
+  bb-mongo:
     image: mongo:latest
     restart: always
     environment:
@@ -19,7 +19,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: $MONGO_ROOT_PASSWORD
       MONGO_INITDB_DATABASE: admins
 
-  bot-base-mongo-express:
+  bb-mongo-express:
     image: mongo-express
     container_name: bot-base-mongo-express
     restart: always
