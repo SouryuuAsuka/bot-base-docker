@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+  melon-bot:
+    build: ../melon-bot/
+    container_name: melon-bot
+    restart: always
+    env_file:
+      - ./melon_bot_variables.env
+    networks:
+      - main-net
+networks:
+  main-net:
+    external: true
